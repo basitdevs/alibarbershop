@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  font-family: var(--font-roboto-condensed);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.font-bitter {
+  font-family: var(--font-bitter);
+}
+
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+.font-roboto-condensed {
+  font-family: var(--font-roboto-condensed);
+}
+
+.swiper-pagination-bullet.custom-dot {
+  width: 7px;
+  height: 7px;
+  margin: 0;
+  border-radius: 50%;
+  background: #000 !important;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+.custom-dot.swiper-pagination-bullet-active {
+  background: #fff !important;
+  transform: scale(1.4);
+  border: 1px solid black !important;
+}
+
+.custom-dot-about.swiper-pagination-bullet {
+  width: 35px;
+  height: 2.5px;
+  margin: 0 5px !important;
+  background: #000 !important;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  opacity: 1;
+}
+.custom-dot-about.swiper-pagination-bullet-active {
+  background: #fff !important;
+}
+
+.price-card-dots {
+  background: linear-gradient(90deg, rgb(102, 102, 102) 1.5px, transparent 1px) 100% 75%
+    repeat-x;
+  background-size: 1ch 1px;
 }
