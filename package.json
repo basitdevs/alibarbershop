@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/styled": "^11.14.0",
+    "@mui/x-date-pickers": "^7.27.3",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
     "framer-motion": "^12.4.12",
     "next": "15.2.1",
     "react": "^19.0.0",
+    "react-calendar": "^5.1.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "swiper": "^11.2.5"
