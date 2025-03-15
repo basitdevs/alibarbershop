@@ -3,7 +3,11 @@ import Hero from "@/components/Common/Hero";
 import Main from "@/components/News/Main";
 import React from "react";
 
-const NewsPage = async ({ params }: { params: { slug: string } }) => {
+const NewsPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) => {
   const { slug } = await params;
   console.log(slug);
 
