@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Heading from "../Common/Heading";
+import Paragraph from "../Common/Paragraph";
 
 const ImageAndText = ({
   heading,
@@ -20,13 +22,9 @@ const ImageAndText = ({
       <div className="max-w-[1200px] mx-auto px-[15px]">
         <div className="grid grid-cols-3 gap-[20px]">
           <div className="">
-            <h2 className="uppercase text-[40px] leading-[1.1] mb-6 font-[500] ">
-              {heading}
-            </h2>
-            <p
-              dangerouslySetInnerHTML={{ __html: description }}
-              className="text-[21px] leading-[1.4] font-[300] text-[#626262] mb-[20px]"
-            ></p>
+            <Heading text={heading} />
+            <Paragraph text={description} />
+
             {button && (
               <Link href={link}>
                 <button className=" font-roboto cursor-pointer hover:scale-[1.05] bg-black text-white hover:bg-transparent hover:text-black border-[2px]  transition-all ease-in-out duration-500 px-[35px] py-[18px] text-[18px]  uppercase  font-[600] ">

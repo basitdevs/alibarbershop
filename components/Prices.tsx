@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Heading from "./Common/Heading";
 
 const prices = [
   {
@@ -95,9 +96,7 @@ const Prices = () => {
     <>
       <div className="py-[80px]">
         <div className="max-w-[1200px] mx-auto px-[15px]">
-          <h2 className="uppercase text-[40px] leading-[1.1] mb-6 font-[500] ">
-            PRICES / PREISE
-          </h2>
+         <Heading text={"PRICES / PREISE"} />
           <div className="grid grid-cols-3 ">
             {prices.map((p, index) => (
               <div

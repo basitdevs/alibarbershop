@@ -1,6 +1,8 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
+import Heading from "../Common/Heading";
+import Paragraph from "../Common/Paragraph";
 
 const ImageAndVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -21,24 +23,24 @@ const ImageAndVideo = () => {
       <div className="max-w-[1200px] mx-auto px-[15px]">
         <div className="grid grid-cols-3 gap-[20px]">
           <div className="">
-            <h2 className="uppercase text-[40px] leading-[1.1] mb-6 font-[500] ">
-              Ali Barbershop beim Kick-off der NFL-Saison auf Puls4!
-            </h2>
-            <p className="text-[21px] leading-[1.4] font-[300] text-[#626262] mb-[20px]">
-              Walter, bekannt für seine Leidenschaft für American Football und
+            <Heading
+              text={"Ali Barbershop beim Kick-off der NFL-Saison auf Puls4!"}
+            />
+            <Paragraph
+              text={`Walter, bekannt für seine Leidenschaft für American Football und
               charismatische Präsenz, entschied sich für eine radikale
               Veränderung, um die neue Saison gebührend zu feiern. “Schnipp
               Schnapp Haare ab!”, war sein Motto, als er sich vertrauensvoll in
-              die Hände unseres Expertenteams begab.
-            </p>
-            <p className="text-[21px] leading-[1.4] font-[300] text-[#626262] mb-[20px]">
-              Ali Barber, der Magier unter den Barbieren, nahm sich dieser
+              die Hände unseres Expertenteams begab.`}
+            />
+            <Paragraph
+              text={`Ali Barber, der Magier unter den Barbieren, nahm sich dieser
               Herausforderung an und zauberte aus Walter Reiterer den
               österreichischen Al Pacino. Mit präzisen Schnitten und einem Auge
               für Details verwandelten wir Walters Look in einen, der sowohl
               Eleganz als auch eine kühne Raffinesse ausstrahlt – perfekt
-              passend zur aufregenden Atmosphäre der NFL-Saison.
-            </p>
+              passend zur aufregenden Atmosphäre der NFL-Saison.`}
+            />
           </div>
           <div className="col-span-2">
             <div className="w-full m-[5px] relative">
@@ -60,20 +62,20 @@ const ImageAndVideo = () => {
               )}
             </div>
             <div className="">
-              <p className="text-[21px] leading-[1.4] font-[300] text-[#626262] my-[20px]">
-                “Es ist immer ein Erlebnis, bei Ali Barbershop vorbeizuschauen.
+              <Paragraph
+                text={`  “Es ist immer ein Erlebnis, bei Ali Barbershop vorbeizuschauen.
                 Nicht nur mein Haarschnitt ist erstklassig, sondern auch die
                 gesamte Erfahrung. Ich fühle mich wie ein neuer Mann – bereit,
                 die neue NFL-Saison zu erleben!”, sagte Walter nach seinem
-                Frische-Upgrade.
-              </p>
-              <p className="text-[21px] leading-[1.4] font-[300] text-[#626262] mb-[20px]">
-                Bei Ali Barbershop geht es nicht nur um Haarschnitte. Es geht um
+                Frische-Upgrade.`}
+              />
+              <Paragraph
+                text={`Bei Ali Barbershop geht es nicht nur um Haarschnitte. Es geht um
                 die Schaffung eines einzigartigen Erlebnisses, das Stil, Komfort
                 und Persönlichkeit miteinander verbindet. Wir sind stolz darauf,
                 Teil solch aufregender Ereignisse zu sein und freuen uns darauf,
-                auch Sie bald in unserem Barbershop begrüßen zu dürfen.
-              </p>
+                auch Sie bald in unserem Barbershop begrüßen zu dürfen.`}
+              />
             </div>
           </div>
         </div>

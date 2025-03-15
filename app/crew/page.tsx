@@ -1,15 +1,19 @@
-import BreadCumb from "@/components/BreadCumb";
+import BreadCumb from "@/components/Common/BreadCumb";
+import Hero from "@/components/Common/Hero";
 import Barbers from "@/components/Crew/Barbers";
-import Hero from "@/components/Crew/Hero";
 import React from "react";
 
 const Crew = () => {
   return (
-    <div>
-      <Hero />
-      <BreadCumb />
+    <main>
+      <Hero
+        title="Crew"
+        img="https://alibarbershop.at/files/2017/12/DSC_0120.jpg"
+        desc="Ali Barber Shop Team"
+      />
+      <BreadCumb text="CREW" />
       <Barbers />
-    </div>
+    </main>
   );
 };
 

@@ -1,13 +1,12 @@
 import Link from "next/link";
 import React from "react";
+import Heading from "./Common/Heading";
 
 const Contact = () => {
   return (
     <div className="py-[80px] ">
       <div className="px-[15px] mx-auto max-w-[1200px]">
-        <h2 className="uppercase text-[40px] leading-[1.1] mb-7 font-[500] ">
-          CONTACT / KONTAKT
-        </h2>
+        <Heading text={"CONTACT / KONTAKT"} />
         <div className="grid grid-cols-3 gap-[20px]">
           <div className="text-[21px] font-[300] leading-[1.4] text-[#626262]">
             <div className="mb-[20px]">

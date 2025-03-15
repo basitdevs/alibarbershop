@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { FaPlay } from "react-icons/fa";
+import Heading from "../Common/Heading";
+import Paragraph from "../Common/Paragraph";
 
 const ContentAndVideo = ({
   video,
@@ -32,14 +34,8 @@ const ContentAndVideo = ({
       <div className="max-w-[1200px] mx-auto px-[15px]">
         <div className="grid grid-cols-3 gap-[20px]">
           <div className="">
-            <h2
-              dangerouslySetInnerHTML={{ __html: title }}
-              className="uppercase text-[40px] leading-[1.1] mb-6 font-[500] "
-            ></h2>
-            <p
-              dangerouslySetInnerHTML={{ __html: desc }}
-              className="text-[21px] leading-[1.4] font-[300] text-[#626262] mb-[20px]"
-            ></p>
+            <Heading text={title} />
+            <Paragraph text={desc} />
             {bookNow && (
               <Link
                 href={"mailto:office@alibarbershop.at"}

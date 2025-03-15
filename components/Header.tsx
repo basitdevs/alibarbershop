@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const links = [
@@ -12,7 +12,7 @@ const links = [
   },
   {
     title: "about",
-    link: "/about",
+    link: "/#about",
   },
   {
     title: "prices",
@@ -36,7 +36,7 @@ const links = [
   },
   {
     title: "contact",
-    link: "/#",
+    link: "/#contact",
   },
 ];
 
@@ -64,7 +64,7 @@ const Header = () => {
       <div className="h-[75px] w-full mx-auto max-w-[1200px] flex items-center justify-between gap-3 px-[15px]">
         <div className="flex items-center ">
           <div className=" flex items-center ">
-            <Link href={"#"} className="w-full">
+            <Link href={"/"} className="w-full">
               <Image
                 src={"https://alibarbershop.at/files/2018/12/Ali_v1W.png"}
                 alt=""

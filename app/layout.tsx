@@ -3,6 +3,7 @@ import { Bitter, Roboto, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Social from "@/components/Social";
 
 const bitter = Bitter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`${bitter.variable} ${roboto.variable} ${roboto_condensed.variable} antialiased`}
       >
         <Header />
+        <Social />
         {children}
         <Footer />
       </body>

@@ -1,4 +1,4 @@
-import Hero from "@/components/Media/Hero";
+import Hero from "@/components/Common/Hero";
 import ImageAndText from "@/components/Media/ImageAndText";
 import ImageAndVideo from "@/components/Media/ImageAndVideo";
 import Slider from "@/components/Media/MediaSlider";
@@ -6,8 +6,8 @@ import React from "react";
 
 const Media = () => {
   return (
-    <div>
-      <Hero />
+    <main>
+      <Hero img="https://alibarbershop.at/files/4V7A__3155.jpg" title="Media" />
       <ImageAndText
         img="https://alibarbershop.at/files/Ali-Barberhomolka_web4.jpg"
         heading=" ALI BARBER SHOP Interview mit Port 41"
@@ -40,7 +40,7 @@ const Media = () => {
                       Wer Lust hat, schaut mit ATV einfach vorbei, z.B. beim „Ali Barber“ im 6. Wiener Bezirk. Beim gebürtigen Libanesen bekommen Männer das volle Programm, von der Rasur über Bartpflege und den Haarschnitt bis hin zum Augenbrauen-Service.
                       <span class="font-[700] block mt-[20px]">Zur Reportage</span>`}
       />
-    </div>
+    </main>
   );
 };
 

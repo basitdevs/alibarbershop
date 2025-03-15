@@ -9,6 +9,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import Link from "next/link";
+import Heading from "./Common/Heading";
+import Paragraph from "./Common/Paragraph";
 
 const newsItems = [
   {
@@ -62,15 +64,9 @@ const News = () => {
     <div className="py-[80px] pb-[30px]">
       <div className="px-[15px] max-w-[1200px] mx-auto grid grid-cols-3 gpa-3">
         <div className="">
-          <h2 className="uppercase text-[40px] leading-[1.1] mb-6 font-[500]">
-            NEWS
-          </h2>
-          <p className="text-[21px] leading-[1.4] font-[300] text-[#626262] mb-12">
-            Check out our latest News
-          </p>
-          <p className="text-[21px] leading-[1.4] font-[300] text-[#626262] mb-6">
-            News about our barbershop
-          </p>
+          <Heading text={"NEWS"} />
+          <Paragraph text={" Check out our latest News"} />
+          <Paragraph text={" News about our barbershop"} />
         </div>
 
         <div className="col-span-2">
@@ -89,9 +85,12 @@ const News = () => {
           >
             {newsItems.map((news) => (
               <SwiperSlide key={news.id} className="relative">
-                <Link href={"#"} className="">
-                  <div className="overflow-hidden pr-[5px]">
-                    <div className="max-h-[201px]  w-full group relative cursor-pointer overflow-hidden">
+                <Link
+                  href={"/news/slug-will-be-here-for-each-news-page-unique"}
+                  className=""
+                >
+                  <div className="overflow-hidden pr-[5px] group">
+                    <div className="max-h-[201px]  w-full  relative cursor-pointer overflow-hidden">
                       <div className="bg-black/30 absolute inset-0 z-[99]" />
                       <Image
                         src={news.image}
