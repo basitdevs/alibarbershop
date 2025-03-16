@@ -8,10 +8,10 @@ import Paragraph from "../Common/Paragraph";
 
 const Main = () => {
   return (
-    <section className="py-[80px] ">
-      <div className="max-w-[1200px] mx-auto px-[15px]">
-        <div className="w-full grid grid-cols-3 ">
-          <div className="col-span-2 w-full flex flex-col justify-center text-center">
+    <section className="py-[20px] mt-[30px] md:mt-0 sm:py-[50px] md:py-[80px] ">
+      <div className="max-w-[1200px] mx-auto px-[20px] md:px-[50px]">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 ">
+          <div className="md:col-span-2 w-full flex flex-col justify-center text-center">
             <div className="max-w-[750px] w-full mx-auto mb-[50px]">
               <Video src="https://alibarbershop.at/files/Barbers-Academy-Seminar-3.mp4" />
             </div>
@@ -35,7 +35,7 @@ const Main = () => {
               <Video src="https://alibarbershop.at/files/Barbers_Academy_01.mp4" />
             </div>
           </div>
-          <div className="ml-[60px] px-[15px]">
+          <div className="md:ml-[60px] mt-[40px] md:mt-0 md:px-[15px]">
             <Sidebar />
           </div>
         </div>

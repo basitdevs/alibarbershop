@@ -61,15 +61,15 @@ const newsItems = [
 
 const News = () => {
   return (
-    <div className="py-[80px] pb-[30px]">
-      <div className="px-[15px] max-w-[1200px] mx-auto grid grid-cols-3 gpa-3">
+    <div className="py-[20px] sm:py-[50px] md:py-[80px] md:pb-[30px]">
+      <div className="px-[20px] sm:px-[50px] max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gpa-3">
         <div className="">
           <Heading text={"NEWS"} />
           <Paragraph text={" Check out our latest News"} />
           <Paragraph text={" News about our barbershop"} />
         </div>
 
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <Swiper
             modules={[Pagination]}
             spaceBetween={0}
@@ -79,6 +79,16 @@ const News = () => {
               clickable: true,
               renderBullet: (index, className) => {
                 return `<span key={"${index}"} class="${className} custom-dot"></span>`;
+              },
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+              },
+              700: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
               },
             }}
             className="w-full !pb-[50px]"

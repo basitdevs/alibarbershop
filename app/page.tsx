@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Loader from "@/components/Loader";
 import News from "@/components/News";
 import Prices from "@/components/Prices";
+import Social from "@/components/Social";
 import { Suspense } from "react";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <About />
       <Prices />
       <Contact />
+      <Social />
     </Suspense>
   );
 }

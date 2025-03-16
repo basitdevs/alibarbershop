@@ -23,11 +23,11 @@ const Hero = ({
       )}
       <div className="bg-[#1d2127]/90 w-full h-full inset-0 z-[2] absolute" />
       <div className="max-w-[1200px] mx-auto px-[15px] flex flex-col items-center justify-center text-center relative z-[3] h-[290px] ">
-        <h2 className="text-white text-[50px] leading-[55px] font-roboto font-[600]  uppercase">
+        <h2 className="text-white text-[35px] md:text-[50px] leading-[37px] md:leading-[55px] font-roboto font-[600]  uppercase">
           {title}
         </h2>
         {desc && (
-          <p className="text-white text-[20px] leading-[25px] font-roboto uppercase">
+          <p className="text-white md:text-[20px] text-[15px] leading-[20px] md:leading-[25px] font-roboto uppercase">
             {desc}
           </p>
         )}

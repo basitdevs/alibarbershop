@@ -20,9 +20,9 @@ const images = [
 
 const MediaSlider = () => {
   return (
-    <div className="py-[80px] ">
-      <div className="max-w-[1200px] mx-auto px-[15px]">
-        <div className="grid grid-cols-3 gap-[20px]">
+    <div className="py-[20px] sm:py-[50px] md:py-[80px] ">
+      <div className="max-w-[1200px] mx-auto px-[20px] md:px-[50px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[20px]">
           <div className="">
             <Heading
               text={` <span className="font-[700]">Men’s Day;</span> Ali Barber Shop bei
@@ -34,7 +34,7 @@ const MediaSlider = () => {
             />
             <Paragraph text={` Hier sind die besten Schnapschüsse:`} />
           </div>
-          <div className="col-span-2">
+          <div className="lg:col-span-2">
             <div className="w-full relative">
               <Swiper
                 modules={[Navigation, Pagination]}
@@ -54,7 +54,7 @@ const MediaSlider = () => {
                         alt=""
                         width={2000}
                         height={1000}
-                        className="w-full h-[500px] object-cover"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
                   </SwiperSlide>

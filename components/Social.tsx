@@ -5,15 +5,21 @@ import { TfiYoutube } from "react-icons/tfi";
 
 const links = [
   {
-    icon: <FaFacebookF className="group-hover:text-blue-600 transition-all duration-300 ease-in-out" />,
+    icon: (
+      <FaFacebookF className="group-hover:text-blue-600 transition-all duration-300 ease-in-out" />
+    ),
     link: "/",
   },
   {
-    icon: <TfiYoutube className="group-hover:text-red-600 transition-all duration-300 ease-in-out" />,
+    icon: (
+      <TfiYoutube className="group-hover:text-red-600 transition-all duration-300 ease-in-out" />
+    ),
     link: "/",
   },
   {
-    icon: <FaInstagram className="group-hover:text-[#d62976] transition-all duration-300 ease-in-out" />,
+    icon: (
+      <FaInstagram className="group-hover:text-[#d62976] transition-all duration-300 ease-in-out" />
+    ),
     link: "/",
   },
 ];
@@ -26,7 +32,7 @@ const Social = () => {
           href={link.link}
           key={index}
           target="_blank"
-          className="bg-[#2d2d2d] group size-[50px] mb-[1px] text-white flex items-center justify-center text-[27px]"
+          className="bg-[#2d2d2d] group size-[45px] md:size-[50px] mb-[2px] text-white flex items-center justify-center text-[22px] md:text-[27px]"
         >
           {link.icon}
         </Link>

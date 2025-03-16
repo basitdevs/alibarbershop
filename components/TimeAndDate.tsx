@@ -75,7 +75,17 @@ const customStyles = {
   },
 };
 
-const TimeAndDate = () => {
+const TimeAndDate = ({
+  time,
+  setTime,
+  date,
+  setDate,
+}: {
+  time: string;
+  setTime: any;
+  date: any;
+  setDate: any;
+}) => {
   const generateTimeSlots = () => {
     const slots = [];
     let startTime = 9 * 60; // Convert 9:00 AM to minutes
@@ -87,15 +97,15 @@ const TimeAndDate = () => {
       const formattedTime = `${hours}:${minutes === 0 ? "00" : minutes}`;
 
       slots.push(formattedTime);
-      startTime += 30; 
+      startTime += 30;
     }
     return slots;
   };
 
   const timeSlots = generateTimeSlots();
-  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [selectedTime, setSelectedTime] = useState(null);
 
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
+  const [selectedDate, setSelectedDate] = useState(dayjs());
   const disablePastDates = (date: Dayjs) => date.isBefore(dayjs(), "day");
 
   return (
@@ -123,7 +133,7 @@ const TimeAndDate = () => {
                 ? "bg-[#3f3f3f] text-white"
                 : "hover:bg-[#ccc] hover:border-black hover:text-black"
             }`}
-            onClick={() => setSelectedTime(slot)}
+            onClick={() => setTime(slot)}
           >
             {slot}
           </button>

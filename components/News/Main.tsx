@@ -9,16 +9,16 @@ import Paragraph from "../Common/Paragraph";
 
 const Main = () => {
   return (
-    <section className="py-[80px] ">
-      <div className="max-w-[1200px] mx-auto px-[15px]">
-        <div className="w-full grid grid-cols-3 ">
-          <div className="col-span-2 w-full">
+    <section className="py-[20px] sm:py-[50px] md:py-[80px] ">
+      <div className="max-w-[1200px] mx-auto px-[20px] md:px-[50px]">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 ">
+          <div className="md:col-span-2 w-full">
             <Heading
               text={` ALI BARBER for L'oreal bei
               <br /> <b>Game City Vienna - Rathaus 2023</b>`}
             />
 
-            <div className="my-[50px] max-w-[740px]">
+            <div className="my-[25px] md:my-[50px] max-w-[740px]">
               <Video src="https://alibarbershop.at/files/Barberclub-Ali-Barber-for-Loreal-at-Game-City-Vienna-Rathaus-2023.mp4" />
             </div>
             <Paragraph
@@ -64,7 +64,7 @@ const Main = () => {
               persönliche Stil nicht zu kurz kommt.`}
             />
           </div>
-          <div className="ml-[60px] px-[15px]">
+          <div className="md:ml-[60px] md:pt-[0] pt-[20px] md:px-[15px]">
             <Sidebar />
           </div>
         </div>

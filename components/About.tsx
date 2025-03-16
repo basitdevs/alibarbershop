@@ -21,9 +21,9 @@ const aboutImgs2 = [
 
 const About = () => {
   return (
-    <div className="py-[80px] bg-[#f5f5f5] ">
-      <div className="max-w-[1200px] mx-auto px-[15px] flex flex-col gap-5">
-        <div className=" grid grid-cols-3">
+    <section id="about" className="py-[20px] sm:py-[50px] md:py-[80px] bg-[#f5f5f5] ">
+      <div className="max-w-[1200px] mx-auto px-[20px] sm:px-[50px] flex flex-col gap-5">
+        <div className=" grid grid-cols-1 md:grid-cols-3">
           <div className="pr-8">
             <Heading text={` ABOUT US / <br /> ÜBER UNS`} />
             <Paragraph
@@ -37,11 +37,11 @@ const About = () => {
               Austria.`}
             />
           </div>
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <AboutSlider images={aboutImgs} index={1} />
           </div>
         </div>
-        <div className=" grid grid-cols-3">
+        <div className=" grid grid-cols-1 md:grid-cols-3">
           <div className="pr-8">
             <Paragraph
               text={`The Ali Barber Shop´s concept is unique and offers the client a
@@ -54,7 +54,7 @@ const About = () => {
               Touch orientalischer Atmosphäre.`}
             />
           </div>
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <Image
               src={"https://alibarbershop.at/files/2016/01/4V7A4375.png"}
               alt=""
@@ -64,7 +64,7 @@ const About = () => {
             />
           </div>
         </div>
-        <div className=" grid grid-cols-3">
+        <div className=" grid grid-cols-1 md:grid-cols-3">
           <div className="pr-8">
             <Paragraph
               text={`  A visit for a hair- or beardtrim should be a positive experience
@@ -77,11 +77,11 @@ const About = () => {
               einem Karambolspiel.`}
             />
           </div>
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <AboutSlider images={aboutImgs2} index={2} />
           </div>
         </div>
-        <div className=" grid grid-cols-3">
+        <div className=" grid grid-cols-1 md:grid-cols-3">
           <div className="pr-8">
             <Paragraph
               text={` Ali Barber Shop sells the best products for Hair & Beards from
@@ -101,7 +101,7 @@ const About = () => {
             <Paragraph text={`Cheers`} />
             <Paragraph text={` Ali Barber`} />
           </div>
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <Image
               src={
                 "https://alibarbershop.at/files/IMG_20210913_163533_edit_2859807954558412.jpg"
@@ -114,7 +114,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

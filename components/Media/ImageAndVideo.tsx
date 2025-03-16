@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
 import Heading from "../Common/Heading";
 import Paragraph from "../Common/Paragraph";
+import Video from "../Common/Video";
 
 const ImageAndVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -19,9 +20,9 @@ const ImageAndVideo = () => {
     }
   };
   return (
-    <div className="py-[80px] ">
-      <div className="max-w-[1200px] mx-auto px-[15px]">
-        <div className="grid grid-cols-3 gap-[20px]">
+    <div className="py-[20px] sm:py-[50px] md:py-[80px] ">
+      <div className="max-w-[1200px] mx-auto px-[20px] md:px-[50px]">
+        <div className="grid grid-cols-1  lg:grid-cols-3 gap-[20px]">
           <div className="">
             <Heading
               text={"Ali Barbershop beim Kick-off der NFL-Saison auf Puls4!"}
@@ -42,26 +43,11 @@ const ImageAndVideo = () => {
               passend zur aufregenden Atmosphäre der NFL-Saison.`}
             />
           </div>
-          <div className="col-span-2">
-            <div className="w-full m-[5px] relative">
-              <video
-                ref={videoRef}
-                src="https://alibarbershop.at/files/ALibarbershop_nmedia2.mp4"
-                controls={isPlaying}
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                className=" w-full object-cover"
-              ></video>
-              {!isPlaying && (
-                <button
-                  onClick={togglePlayPause}
-                  className="absolute inset-1/2 group hover:scale-[1.1] transition-all duration-500 ease-in-out translate-x-[-50%] translate-y-[-50%] cursor-pointer z-[999] text-[30px] size-[60px] flex items-center justify-center border-[4px] border-white text-white p-3 rounded-full"
-                >
-                  <FaPlay className="ml-[5px]" />
-                </button>
-              )}
+          <div className="lg:col-span-2">
+            <div className="w-full relative">
+              <Video src="https://alibarbershop.at/files/ALibarbershop_nmedia2.mp4" />
             </div>
-            <div className="">
+            <div className="mt-[30px]">
               <Paragraph
                 text={`  “Es ist immer ein Erlebnis, bei Ali Barbershop vorbeizuschauen.
                 Nicht nur mein Haarschnitt ist erstklassig, sondern auch die

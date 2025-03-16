@@ -93,11 +93,11 @@ const prices = [
 
 const Prices = () => {
   return (
-    <>
-      <div className="py-[80px]">
-        <div className="max-w-[1200px] mx-auto px-[15px]">
+    <section id="prices">
+      <div className="py-[20px] sm:py-[50px] md:py-[80px]">
+        <div className="max-w-[1200px] mx-auto px-[20px] sm:px-[50px] ">
          <Heading text={"PRICES / PREISE"} />
-          <div className="grid grid-cols-3 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
             {prices.map((p, index) => (
               <div
                 key={index}
@@ -130,7 +130,7 @@ const Prices = () => {
           className="w-full h-full object-cover"
         />
       </div>
-    </>
+    </section>
   );
 };
 

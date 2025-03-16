@@ -7,6 +7,7 @@ import TimeAndDate from "./TimeAndDate";
 import DetailsForm from "./DetailsForm";
 import { IoClose } from "react-icons/io5";
 import { useGlobalContext } from "@/context/GlobalContext";
+import dayjs, { Dayjs } from "dayjs";
 
 const steps = [
   {
@@ -58,10 +59,12 @@ const services = [
 ];
 
 const Booking = () => {
+  const { showBooking, toggleBooking } = useGlobalContext();
   const [activeStep, setActiveStep] = useState(1);
   const [selectedBarber, setSelectedBarber] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
-  const { showBooking, toggleBooking } = useGlobalContext();
+  const [selectedTime, setSelectedTime] = useState<string>("");
+  const [selectedDate, setSelectedDate] = useState(dayjs());
 
   const handleBarberSelect = (barber: any) => {
     setSelectedBarber(barber);
@@ -70,6 +73,23 @@ const Booking = () => {
   const handleServiceSelect = (service: any) => {
     setSelectedService(service);
     setActiveStep(2);
+  };
+
+  const handelTimeSelect = (timeSlot: any) => {
+    setSelectedTime(timeSlot);
+    setActiveStep(3);
+  };
+
+  const handleBackStep = () => {
+    if (activeStep == 1) {
+      setActiveStep(1);
+    } else if (activeStep == 2) {
+      setActiveStep(1);
+      setSelectedBarber(null);
+      setSelectedService(null);
+    } else {
+      setActiveStep(activeStep - 1);
+    }
   };
 
   if (!showBooking) return;
@@ -177,7 +197,12 @@ const Booking = () => {
               </p>
               <p>Choose your appointment</p>
             </div>
-            <TimeAndDate />
+            <TimeAndDate
+              time={selectedTime}
+              setTime={handelTimeSelect}
+              date={selectedDate}
+              setDate={setSelectedDate}
+            />
           </div>
         )}
         {activeStep == 3 && (
@@ -229,9 +254,14 @@ const Booking = () => {
 
         <div className="pt-[30px] mt-[20px] border-t border-[#c0c0c0]">
           <div className="flex items-center justify-between gap-2">
-            <button className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
-              Back
-            </button>
+            {activeStep > 1 && (
+              <button
+                onClick={() => handleBackStep()}
+                className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]"
+              >
+                Back
+              </button>
+            )}
             {activeStep == 3 && (
               <button className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
                 Next

@@ -3,9 +3,9 @@ import { Bitter, Roboto, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Social from "@/components/Social";
 import { GlobalProvider } from "@/context/GlobalContext";
 import Booking from "@/components/Booking";
+import MobileNav from "@/components/MobileNav";
 
 const bitter = Bitter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -39,11 +39,11 @@ export default function RootLayout({
         className={`${bitter.variable} ${roboto.variable} ${roboto_condensed.variable} antialiased`}
       >
         <GlobalProvider>
-          <Social />
           <Booking />
           <Header />
           {children}
           <Footer />
+          <MobileNav />
         </GlobalProvider>
       </body>
     </html>

@@ -102,12 +102,12 @@ const Hero = () => {
             className="absolute z-[9] inset-0 bg-black/50 flex flex-col justify-center items-center text-center p-4"
           >
             {slide.title && (
-              <h2 className="text-[36px] leading-[1.3] font-bitter text-white font-bold tracking-[4.3px] uppercase max-w-[620px]  mb-4">
+              <h2 className="text-[27px] md:text-[36px] leading-[1.3] font-bitter text-white font-bold tracking-[4.3px] uppercase max-w-[620px]  mb-4">
                 {slide.title}
               </h2>
             )}
             {slide.description && (
-              <p className="text-[26px] font-bitter text-white  max-w-[620px]">
+              <p className="text-[17px] md:text-[26px] font-bitter text-white  max-w-[620px]">
                 {slide.description}
               </p>
             )}
@@ -125,13 +125,13 @@ const Hero = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute z-[99] top-1/2 left-6 text-[50px] cursor-pointer transform -translate-y-1/2 text-white "
+        className="absolute z-[9] top-1/2 left-2 md:left-6 text-[35px] md:text-[50px] cursor-pointer transform -translate-y-1/2 text-white "
       >
         <MdArrowBackIos />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute z-[99] top-1/2 right-6 text-[50px] cursor-pointer transform -translate-y-1/2 text-white "
+        className="absolute z-[9] top-1/2 right-2 md:right-6 text-[35px] md:text-[50px] cursor-pointer transform -translate-y-1/2 text-white "
       >
         <MdArrowForwardIos />
       </button>

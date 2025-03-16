@@ -4,10 +4,10 @@ import Heading from "./Common/Heading";
 
 const Contact = () => {
   return (
-    <div className="py-[80px] ">
-      <div className="px-[15px] mx-auto max-w-[1200px]">
+    <section id="contact" className="py-[20px] sm:py-[50px] md:py-[80px]">
+      <div className="px-[20px] sm:px-[50px]  mx-auto max-w-[1200px]">
         <Heading text={"CONTACT / KONTAKT"} />
-        <div className="grid grid-cols-3 gap-[20px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[20px]">
           <div className="text-[21px] font-[300] leading-[1.4] text-[#626262]">
             <div className="mb-[20px]">
               <p className="flex items-center gap-2">
@@ -52,7 +52,7 @@ const Contact = () => {
               </Link>
             </div>
           </div>
-          <div className="col-span-2 mb-[10px]">
+          <div className="lg:col-span-2 mb-[10px]">
             <div className="w-full  flex flex-col text-[#626262]">
               <div className="w-full">
                 <input
@@ -101,7 +101,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
