@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import Link from "next/link";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 const slides = [
   {
@@ -54,6 +55,7 @@ const slides = [
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
+  const { toggleBooking } = useGlobalContext();
   const length = slides.length;
 
   const nextSlide = () => {
@@ -91,7 +93,6 @@ const Hero = () => {
                 src={slide.src}
                 alt={slide.title || "SLIDER IMAGE"}
                 layout="fill"
-
                 objectFit="cover"
               />
             </div>
@@ -111,7 +112,7 @@ const Hero = () => {
               </p>
             )}
             {slide.button && (
-              <Link href={"#"}>
+              <Link href={"#"} onClick={() => toggleBooking()}>
                 <button className="border font-roboto  border-white text-white mt-8 mb-4 cursor-pointer hover:scale-[1.05] hover:bg-white hover:text-black transition-all ease-in-out duration-500 p-[17px] text-[20px] tracking-[5px] uppercase font-roboto font-bold ">
                   Book Now
                 </button>

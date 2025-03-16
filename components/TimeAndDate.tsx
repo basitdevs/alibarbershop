@@ -121,7 +121,7 @@ const TimeAndDate = () => {
             className={`px-6 py-1 rounded-[3px] text-[13px]  h-[30px] flex items-center justify-center border cursor-pointer border-[#ccc] font-medium transition-all duration-300 ease-in-out ${
               selectedTime === slot
                 ? "bg-[#3f3f3f] text-white"
-                : "hover:bg-[#ccc] hover:text-black"
+                : "hover:bg-[#ccc] hover:border-black hover:text-black"
             }`}
             onClick={() => setSelectedTime(slot)}
           >

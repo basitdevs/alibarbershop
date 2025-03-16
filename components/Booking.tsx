@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import TimeAndDate from "./TimeAndDate";
+import DetailsForm from "./DetailsForm";
+import { IoClose } from "react-icons/io5";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 const steps = [
   {
@@ -55,9 +58,10 @@ const services = [
 ];
 
 const Booking = () => {
-  const [activeStep, setActiveStep] = useState(2);
+  const [activeStep, setActiveStep] = useState(1);
   const [selectedBarber, setSelectedBarber] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
+  const { showBooking, toggleBooking } = useGlobalContext();
 
   const handleBarberSelect = (barber: any) => {
     setSelectedBarber(barber);
@@ -68,9 +72,11 @@ const Booking = () => {
     setActiveStep(2);
   };
 
+  if (!showBooking) return;
+
   return (
-    <div className="fixed inset-0 z-[999] w-full h-full py-[40px] px-[20px] flex justify-center bg-black/60 overflow-hidden">
-      <div className="p-[18px] overflow-y-auto h-fit rounded-[3px] border-2 border-black shadow-[0px_0px_30px_0px_rgba(2,2,2,1)] bg-white w-[60%] ">
+    <div className="fixed  overflow-y-auto inset-0 z-[999] w-full h-full py-[40px] px-[20px] flex justify-center bg-black/60 overflow-hidden">
+      <div className="p-[18px] relative  h-fit rounded-[3px] border-2 border-black shadow-[0px_0px_30px_0px_rgba(2,2,2,1)] bg-white w-[60%] ">
         <div className="flex items-center justify-center mb-[20px]">
           <Image
             src={
@@ -174,11 +180,65 @@ const Booking = () => {
             <TimeAndDate />
           </div>
         )}
+        {activeStep == 3 && (
+          <div className="w-full">
+            <div className="mb-[20px] w-full flex">
+              <div className="w-[20%] mr-[15px]  border-[2px] border-black rounded-[4%] h-auto p-[2px]">
+                <Image
+                  src={
+                    "https://alibarbershop.at/wp-content/uploads/Georgi-Barber-2.jpg"
+                  }
+                  alt=""
+                  width={1000}
+                  height={1000}
+                  className="w-full h-full object-cover rounded-[3%]"
+                />
+              </div>
+              <div className="w-[65%]  text-[14px] mt-[5px] leading-[1.4] font-[300] ">
+                You have an appointment:
+                <br /> Service:{" "}
+                <b className="font-[700]">
+                  ALI BARBER BEARD TRIM ( english beard trim & beard care &
+                  brush blow dry)
+                </b>
+                <br />
+                Barber: <b className="font-[700]">Georgi Barber</b>
+                <br />
+                Date: <b className="font-[700]">17/03/2025</b>
+                <br />
+                Time <b className="font-[700]">14:30</b>
+                <br />
+                Price: <b className="font-[700]">€35,00</b>.
+                <br /> <br />
+                Please fill in your data to continue booking.
+              </div>
+            </div>
+            <div className="mb-[20px] ">
+              <p className="mb-[20px] font-[300]">
+                Already registered? Log In here
+              </p>
+              <button className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
+                Login
+              </button>
+            </div>
+            <DetailsForm />
+          </div>
+        )}
+
+        {activeStep == 4 && <div className=""></div>}
 
         <div className="pt-[30px] mt-[20px] border-t border-[#c0c0c0]">
-          <button className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
-            Back
-          </button>
+          <div className="flex items-center justify-between gap-2">
+            <button className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
+              Back
+            </button>
+            {activeStep == 3 && (
+              <button className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
+                Next
+              </button>
+            )}
+          </div>
+
           <p className="text-center text-[#626262] font-[300] mb-[10px] text-[14px]">
             Attention! If Online-Booking fails, please call us during our
             opening hours to book an appointment. <br />
@@ -190,6 +250,13 @@ const Booking = () => {
             </span>
           </p>
         </div>
+
+        <button
+          onClick={() => toggleBooking()}
+          className="size-[30px] absolute z-[99] flex items-center justify-center cursor-pointer top-[-8px] right-[-8px] rounded-full bg-black text-white font-inherit font-thin text-[22px] leading-[26px] border-2 border-white shadow-[0px_0px_15px_1px_rgba(2,2,2,0.75)]"
+        >
+          <IoClose />
+        </button>
       </div>
     </div>
   );

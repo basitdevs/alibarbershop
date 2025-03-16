@@ -50,7 +50,11 @@ body {
 }
 
 .price-card-dots {
-  background: linear-gradient(90deg, rgb(102, 102, 102) 1.5px, transparent 1px) 100% 75%
-    repeat-x;
+  background: linear-gradient(90deg, rgb(102, 102, 102) 1.5px, transparent 1px)
+    100% 75% repeat-x;
   background-size: 1ch 1px;
+}
+
+.PhoneInputInput {
+  outline: none;
 }

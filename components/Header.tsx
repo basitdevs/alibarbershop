@@ -1,5 +1,6 @@
 "use client";
 
+import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -43,6 +44,7 @@ const links = [
 const Header = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const { toggleBooking } = useGlobalContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,6 +110,7 @@ const Header = () => {
         <div className="">
           <Link href={"#"}>
             <button
+              onClick={() => toggleBooking()}
               className={`border font-roboto  ${
                 scrolled
                   ? "border-black text-white bg-black hover:bg-transparent hover:text-black "
