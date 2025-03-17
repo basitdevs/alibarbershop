@@ -6,7 +6,7 @@ import { ReactElement } from "react";
 const FadeRight = ({ children, delay = 0 }: { children: ReactElement; delay?: number }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, translateX: 200 }}
+      initial={{ opacity: 0, translateX: 100 }}
       whileInView={{
         opacity: 1,
         translateX: 0,

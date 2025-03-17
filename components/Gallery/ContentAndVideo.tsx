@@ -26,7 +26,7 @@ const ContentAndVideo = ({
             <Paragraph text={desc} />
             {bookNow && (
               <div className="mb-[30px]">
-                <FadeUp delay={0.4}>
+                <FadeUp delay={0.3}>
                   <Link
                     href={"mailto:office@alibarbershop.at"}
                     target="_blank"
@@ -40,7 +40,7 @@ const ContentAndVideo = ({
           </div>
 
           <div className="md:col-span-2 w-full overflow-hidden">
-            <FadeRight delay={0.5}>
+            <FadeRight delay={0.3}>
               <Video src={video} />
             </FadeRight>
           </div>

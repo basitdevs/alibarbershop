@@ -12,7 +12,7 @@ const FadeLeft = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, translateX: -70 }}
+      initial={{ opacity: 0, translateX: -50 }}
       whileInView={{
         opacity: 1,
         translateX: 0,
