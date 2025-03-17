@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "./styles/Calendar.css";
 
 * {
   font-family: var(--font-roboto-condensed);
