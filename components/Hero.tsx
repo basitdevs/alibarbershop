@@ -5,6 +5,8 @@ import Image from "next/image";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import Link from "next/link";
 import { useGlobalContext } from "@/context/GlobalContext";
+import FadeUpTitle from "./motion/FadeUpTitle";
+import FadeUp from "./motion/FadeUp";
 
 const slides = [
   {
@@ -102,21 +104,27 @@ const Hero = () => {
             className="absolute z-[9] inset-0 bg-black/50 flex flex-col justify-center items-center text-center p-4"
           >
             {slide.title && (
-              <h2 className="text-[27px] md:text-[36px] leading-[1.3] font-bitter text-white font-bold tracking-[4.3px] uppercase max-w-[620px]  mb-4">
-                {slide.title}
-              </h2>
+              <FadeUpTitle>
+                <h2 className="text-[27px] md:text-[36px] leading-[1.3] font-bitter text-white font-bold tracking-[4.3px] uppercase max-w-[620px]  mb-4">
+                  {slide.title}
+                </h2>
+              </FadeUpTitle>
             )}
             {slide.description && (
-              <p className="text-[17px] md:text-[26px] font-bitter text-white  max-w-[620px]">
-                {slide.description}
-              </p>
+              <FadeUp delay={0.4}>
+                <p className="text-[17px] md:text-[26px] font-bitter text-white  max-w-[620px]">
+                  {slide.description}
+                </p>
+              </FadeUp>
             )}
             {slide.button && (
-              <Link href={"#"} onClick={() => toggleBooking()}>
-                <button className="border font-roboto  border-white text-white mt-8 mb-4 cursor-pointer hover:scale-[1.05] hover:bg-white hover:text-black transition-all ease-in-out duration-500 p-[17px] text-[20px] tracking-[5px] uppercase font-roboto font-bold ">
-                  Book Now
-                </button>
-              </Link>
+              <FadeUp delay={0.6}>
+                <Link href={"#"} onClick={() => toggleBooking()}>
+                  <button className="border font-roboto  border-white text-white mt-8 mb-4 cursor-pointer hover:scale-[1.05] hover:bg-white hover:text-black transition-all ease-in-out duration-500 p-[17px] text-[20px] tracking-[5px] uppercase font-roboto font-bold ">
+                    Book Now
+                  </button>
+                </Link>
+              </FadeUp>
             )}
           </div>
         </div>

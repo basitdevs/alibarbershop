@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Heading from "./Common/Heading";
+import { motion } from "framer-motion";
 
 const prices = [
   {
@@ -15,6 +18,10 @@ const prices = [
         amount: "45€",
       },
     ],
+    initial: {
+      x: -300,
+    },
+    animate: { x: 0 },
   },
   {
     title: "Beards",
@@ -24,6 +31,10 @@ const prices = [
         amount: "35€",
       },
     ],
+    initial: {
+      y: -100,
+    },
+    animate: { y: 0 },
   },
   {
     title: "Combos",
@@ -37,6 +48,10 @@ const prices = [
         amount: "65€",
       },
     ],
+    initial: {
+      x: 300,
+    },
+    animate: { x: 0 },
   },
   {
     title: "Shaves",
@@ -54,6 +69,10 @@ const prices = [
         amount: "45€",
       },
     ],
+    initial: {
+      x: -300,
+    },
+    animate: { x: 0 },
   },
   {
     title: "Colouring",
@@ -71,6 +90,10 @@ const prices = [
         amount: "from 35€",
       },
     ],
+    initial: {
+      y: 100,
+    },
+    animate: { y: 0 },
   },
   {
     title: "Cosmetics",
@@ -88,6 +111,10 @@ const prices = [
         amount: "14/20€",
       },
     ],
+    initial: {
+      x: 300,
+    },
+    animate: { x: 0 },
   },
 ];
 
@@ -96,10 +123,14 @@ const Prices = () => {
     <section id="prices">
       <div className="py-[20px] sm:py-[50px] md:py-[80px]">
         <div className="max-w-[1200px] mx-auto px-[20px] sm:px-[50px] ">
-         <Heading text={"PRICES / PREISE"} />
+          <Heading text={"PRICES / PREISE"} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
             {prices.map((p, index) => (
-              <div
+              <motion.div
+                initial={p.initial}
+                whileInView={p.animate}
+                transition={{duration:0.6, type:"spring", delay:index*0.03}}
+                viewport={{once:true}}
                 key={index}
                 className="mt-[20px] mr-[20px] border-[1px] border-[#a5a5a5] p-[40px]"
               >
@@ -116,14 +147,16 @@ const Prices = () => {
                     <p className="shrink-0">{service.amount}</p>
                   </div>
                 ))}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
       <div className="w-full">
         <Image
-          src={"https://alibarbershop.at/dir/uploads/AliBarberShop_doppel3_2.jpg"}
+          src={
+            "https://alibarbershop.at/dir/uploads/AliBarberShop_doppel3_2.jpg"
+          }
           alt=""
           width={3000}
           height={5000}

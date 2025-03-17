@@ -24,7 +24,9 @@ const MobileNav = () => {
         Book Now
       </button>
       <Link
-        href={"tel:+4319292150"}
+        href={
+          "https://www.google.at/maps/place/Amerlingstra%C3%9Fe+4,+1060+Wien/@48.196875,16.3492119,17z/data=!4m13!1m7!3m6!1s0x476d07894228d791:0xcb9dbf70316922f2!2sAmerlingstra%C3%9Fe+4,+1060+Wien!3b1!8m2!3d48.196875!4d16.3514006!3m4!1s0x476d07894228d791:0xcb9dbf70316922f2!8m2!3d48.196875!4d16.3514006"
+        }
         className="flex items-center justify-center w-full  bg-[#2d2d2d] text-white text-[20px]"
       >
         <HiMapPin />

@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Heading from "./Common/Heading";
 import Paragraph from "./Common/Paragraph";
+import Fade from "./motion/Fade";
 
 const newsItems = [
   {
@@ -70,59 +71,61 @@ const News = () => {
         </div>
 
         <div className="md:col-span-2">
-          <Swiper
-            modules={[Pagination]}
-            spaceBetween={0}
-            slidesPerView={2}
-            slidesPerGroup={2}
-            pagination={{
-              clickable: true,
-              renderBullet: (index, className) => {
-                return `<span key={"${index}"} class="${className} custom-dot"></span>`;
-              },
-            }}
-            breakpoints={{
-              320: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-              },
-              700: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-              },
-            }}
-            className="w-full !pb-[50px]"
-          >
-            {newsItems.map((news) => (
-              <SwiperSlide key={news.id} className="relative">
-                <Link
-                  href={"/news/slug-will-be-here-for-each-news-page-unique"}
-                  className=""
-                >
-                  <div className="overflow-hidden pr-[5px] group">
-                    <div className="max-h-[201px]  w-full  relative cursor-pointer overflow-hidden">
-                      <div className="bg-black/30 absolute inset-0 z-[99]" />
-                      <Image
-                        src={news.image}
-                        alt={news.title}
-                        width={1000}
-                        height={2000}
-                        className="w-full group-hover:scale-[1.1] transition-all duration-500 ease-in-out h-[201px] object-cover"
-                      />
+          <Fade delay={0.5}>
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={0}
+              slidesPerView={2}
+              slidesPerGroup={2}
+              pagination={{
+                clickable: true,
+                renderBullet: (index, className) => {
+                  return `<span key={"${index}"} class="${className} custom-dot"></span>`;
+                },
+              }}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  slidesPerGroup: 1,
+                },
+                700: {
+                  slidesPerView: 2,
+                  slidesPerGroup: 2,
+                },
+              }}
+              className="w-full !pb-[50px]"
+            >
+              {newsItems.map((news) => (
+                <SwiperSlide key={news.id} className="relative">
+                  <Link
+                    href={"/news/slug-will-be-here-for-each-news-page-unique"}
+                    className=""
+                  >
+                    <div className="overflow-hidden pr-[5px] group">
+                      <div className="max-h-[201px]  w-full  relative cursor-pointer overflow-hidden">
+                        <div className="bg-black/10 group-hover:bg-black/30 absolute inset-0 z-[99]" />
+                        <Image
+                          src={news.image}
+                          alt={news.title}
+                          width={1000}
+                          height={2000}
+                          className="w-full group-hover:scale-[1.1] transition-all duration-500 ease-in-out h-[201px] object-cover"
+                        />
+                      </div>
+                      <div className="pt-[25px] pr-[25px] bg-white">
+                        <h3 className="text-[15px] uppercase font-roboto font-[600] leading-[22px] text-[#626262]">
+                          {news.title}
+                        </h3>
+                        <p className="text-[14px] leading-[24px] text-[#626262] my-[3%]">
+                          {news.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="pt-[25px] pr-[25px] bg-white">
-                      <h3 className="text-[15px] uppercase font-roboto font-[600] leading-[22px] text-[#626262]">
-                        {news.title}
-                      </h3>
-                      <p className="text-[14px] leading-[24px] text-[#626262] my-[3%]">
-                        {news.description}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Fade>
         </div>
       </div>
     </div>

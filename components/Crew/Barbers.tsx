@@ -1,16 +1,33 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const ImageComponet = ({
   src,
   name,
   designation,
+  delay,
 }: {
   src: string;
   name: string;
   designation: string;
+  delay?: number;
 }) => (
-  <div className="relative overflow-hidden group">
+  <motion.div
+    initial={{ y: 100, opacity: 0 }}
+    whileInView={{
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+        delay: delay,
+        type: "spring",
+      },
+    }}
+    className="relative overflow-hidden group"
+  >
     <Image
       src={src}
       alt=""
@@ -26,7 +43,7 @@ const ImageComponet = ({
         {designation}
       </p>
     </div>
-  </div>
+  </motion.div>
 );
 
 const Barbers = () => {
@@ -39,6 +56,7 @@ const Barbers = () => {
               src="https://alibarbershop.at/files/2018/01/DSC_0078.jpg"
               name="Ali Barber"
               designation="The Boss"
+              delay={0}
             />
           </div>
           <div className="md:w-[25%] md:mr-[20px] md:m-[5px] flex flex-col gap-[12px] md:gap-[24px]">
@@ -46,11 +64,13 @@ const Barbers = () => {
               src="https://alibarbershop.at/files/Faisal-Barber-Copy.jpg"
               name="Faisal"
               designation="Barber"
+              delay={0.3}
             />
             <ImageComponet
               src="https://alibarbershop.at/files/Georgi-Barber-2.jpg"
               name="Georgi"
               designation="Barber"
+              delay={0.4}
             />
           </div>
           <div className="md:w-[25%] md:mr-[20px] md:m-[5px] flex flex-col gap-[12px] md:gap-[24px]">
@@ -58,6 +78,7 @@ const Barbers = () => {
               src="https://alibarbershop.at/files/Adel-Barber.jpg"
               designation="Barber"
               name="Adel"
+              delay={0.6}
             />
           </div>
         </div>

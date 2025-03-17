@@ -6,6 +6,7 @@ import AboutSlider from "./AboutSlider";
 import Image from "next/image";
 import Heading from "./Common/Heading";
 import Paragraph from "./Common/Paragraph";
+import FadeRight from "./motion/FadeRight";
 
 const aboutImgs = [
   "https://alibarbershop.at/files/4V7A009696-1.jpg",
@@ -21,7 +22,10 @@ const aboutImgs2 = [
 
 const About = () => {
   return (
-    <section id="about" className="py-[20px] sm:py-[50px] md:py-[80px] bg-[#f5f5f5] ">
+    <section
+      id="about"
+      className="py-[20px] sm:py-[50px] md:py-[80px] bg-[#f5f5f5] "
+    >
       <div className="max-w-[1200px] mx-auto px-[20px] sm:px-[50px] flex flex-col gap-5">
         <div className=" grid grid-cols-1 md:grid-cols-3">
           <div className="pr-8">
@@ -38,7 +42,9 @@ const About = () => {
             />
           </div>
           <div className="md:col-span-2">
-            <AboutSlider images={aboutImgs} index={1} />
+            <FadeRight delay={0.3}>
+              <AboutSlider images={aboutImgs} index={1} />
+            </FadeRight>
           </div>
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-3">
@@ -55,13 +61,15 @@ const About = () => {
             />
           </div>
           <div className="md:col-span-2">
-            <Image
-              src={"https://alibarbershop.at/files/2016/01/4V7A4375.png"}
-              alt=""
-              width={2000}
-              height={1500}
-              className="h-[500px] w-full object-cover"
-            />
+            <FadeRight delay={0.4}>
+              <Image
+                src={"https://alibarbershop.at/files/2016/01/4V7A4375.png"}
+                alt=""
+                width={2000}
+                height={1500}
+                className="h-[500px] w-full object-cover"
+              />
+            </FadeRight>
           </div>
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-3">
@@ -78,7 +86,9 @@ const About = () => {
             />
           </div>
           <div className="md:col-span-2">
-            <AboutSlider images={aboutImgs2} index={2} />
+            <FadeRight delay={0.5}>
+              <AboutSlider images={aboutImgs2} index={2} />
+            </FadeRight>
           </div>
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-3">
@@ -102,15 +112,17 @@ const About = () => {
             <Paragraph text={` Ali Barber`} />
           </div>
           <div className="md:col-span-2">
-            <Image
-              src={
-                "https://alibarbershop.at/files/IMG_20210913_163533_edit_2859807954558412.jpg"
-              }
-              alt=""
-              width={2000}
-              height={1500}
-              className="h-[500px] w-full object-cover"
-            />
+            <FadeRight delay={0.55}>
+              <Image
+                src={
+                  "https://alibarbershop.at/files/IMG_20210913_163533_edit_2859807954558412.jpg"
+                }
+                alt=""
+                width={2000}
+                height={1500}
+                className="h-[500px] w-full object-cover"
+              />
+            </FadeRight>
           </div>
         </div>
       </div>

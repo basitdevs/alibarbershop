@@ -6,6 +6,7 @@ import Sidebar from "../Common/Sidebar";
 import Video from "../Common/Video";
 import Heading from "../Common/Heading";
 import Paragraph from "../Common/Paragraph";
+import FadeRight from "../motion/FadeRight";
 
 const Main = () => {
   return (
@@ -65,7 +66,9 @@ const Main = () => {
             />
           </div>
           <div className="md:ml-[60px] md:pt-[0] pt-[20px] md:px-[15px]">
-            <Sidebar />
+            <FadeRight delay={0.4}>
+              <Sidebar />
+            </FadeRight>
           </div>
         </div>
       </div>

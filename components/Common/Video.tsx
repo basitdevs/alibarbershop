@@ -21,8 +21,7 @@ const Video = ({ src }: { src: string }) => {
   };
 
   return (
-    <div className="w-full">
-      <div className="w-full m-[5px] relative">
+      <div className=" relative">
         <video
           ref={videoRef}
           src={src}
@@ -41,7 +40,6 @@ const Video = ({ src }: { src: string }) => {
           </button>
         )}
       </div>
-    </div>
   );
 };
 

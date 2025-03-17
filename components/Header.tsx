@@ -51,7 +51,6 @@ const Header = () => {
   const toggleMenu = () => {
     setIsOpen((prev) => {
       const newState = !prev;
-      document.body.style.overflow = newState ? "hidden" : "auto";
       return newState;
     });
   };

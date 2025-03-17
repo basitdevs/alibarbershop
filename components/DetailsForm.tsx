@@ -9,7 +9,7 @@ const DetailsForm = () => {
 
   return (
     <div className="">
-      <div className="grid grid-cols-2 gap-[13px] mb-[20px] ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[13px] mb-[20px] ">
         <div className=" flex flex-col w-full">
           <label
             htmlFor=""
@@ -35,7 +35,7 @@ const DetailsForm = () => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-[13px] mb-[20px] ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[13px] mb-[20px] ">
         <div className="relative flex flex-col w-full">
           <label
             htmlFor=""
@@ -84,9 +84,12 @@ const DetailsForm = () => {
           ></textarea>
         </div>
       </div>
-      <label className="font-[700] text-black">
+      <label className="font-[700] !leading-[1] text-[14px] md:text-[16px] text-black">
         By clicking on next, you agree to the{" "}
-        <Link href="#" className="text-[#626262]">Terms and Conditions</Link> of Ali Barber Shop.
+        <Link href="#" className="text-[#626262]">
+          Terms and Conditions
+        </Link>{" "}
+        of Ali Barber Shop.
       </label>
     </div>
   );

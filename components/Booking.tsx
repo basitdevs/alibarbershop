@@ -8,6 +8,10 @@ import DetailsForm from "./DetailsForm";
 import { IoClose } from "react-icons/io5";
 import { useGlobalContext } from "@/context/GlobalContext";
 import dayjs, { Dayjs } from "dayjs";
+import FadeUp from "./motion/FadeUp";
+import Fade from "./motion/Fade";
+import FadeLeft from "./motion/FadeLeft";
+import FadeRight from "./motion/FadeRight";
 
 const steps = [
   {
@@ -92,11 +96,19 @@ const Booking = () => {
     }
   };
 
+  const handleCloseBooking = () => {
+    toggleBooking();
+    setActiveStep(1);
+    setSelectedBarber(null);
+    setSelectedTime("");
+    setSelectedService(null);
+  };
+
   if (!showBooking) return;
 
   return (
-    <div className="fixed  overflow-y-auto inset-0 z-[999] w-full h-full py-[40px] px-[20px] flex justify-center bg-black/60 overflow-hidden">
-      <div className="p-[18px] relative  h-fit rounded-[3px] border-2 border-black shadow-[0px_0px_30px_0px_rgba(2,2,2,1)] bg-white w-[60%] ">
+    <div className="fixed  overflow-y-auto inset-0 z-[999] w-full h-full p-[10px] pb-[50px] md:pb-[40px] md:py-[40px] md:px-[20px] flex justify-center bg-black/60 overflow-hidden">
+      <div className="p-[18px] relative  h-fit rounded-[3px] border-2 border-black shadow-[0px_0px_30px_0px_rgba(2,2,2,1)] bg-white w-full md:w-[60%] ">
         <div className="flex items-center justify-center mb-[20px]">
           <Image
             src={
@@ -108,7 +120,7 @@ const Booking = () => {
             className="max-w-[200px] w-full h-auto object-cover"
           />
         </div>
-        <div className="mb-[20px] w-full grid grid-cols-4 gap-[4px]">
+        <div className="mb-[20px] w-full hidden md:grid grid-cols-4 gap-[4px]">
           {steps.map((step, index) => (
             <div key={index} className="">
               <p className="text-[#3f3f3f] font-[700] text-[14px]">
@@ -134,31 +146,32 @@ const Booking = () => {
                 <h4 className="text-[20px] mb-[10px] font-[700] text-center">
                   Choose your Barber
                 </h4>
-                <div className="p-[10px] flex items-center flex-wrap justify-center">
+                <div className="py-[10px]a md:p-[10px] flex items-center flex-wrap justify-center">
                   {barbers.map((barber, index) => (
-                    <div
-                      key={index}
-                      onClick={() => handleBarberSelect(barber)}
-                      className="border-[5px] relative group border-white size-[135px] cursor-pointer rounded-full mr-[10px] mb-[20px] overflow-hidden text-[18px] text-white font-[400] "
-                    >
-                      <Image
-                        src={barber.img}
-                        alt={barber.name}
-                        width={200}
-                        height={200}
-                        className="w-full h-full object-cover absolute inset-0  group-hover:translate-x-[-100%] transition-all ease-in-out duration-300"
-                      />
-                      <Image
-                        src={barber.img}
-                        alt={barber.name}
-                        width={200}
-                        height={200}
-                        className="w-full h-full object-cover absolute inset-0  group-hover:translate-x-[0] translate-x-[100%] transition-all ease-in-out duration-300"
-                      />
-                      <div className="absolute inset-0 group-hover:opacity-100 opacity-0 transition-all ease-in-out duration-500 w-full h-full bg-[#232323] border-[5px] border-[#3c3c3cfc] flex items-center justify-center rounded-full">
-                        {barber.name}
+                    <FadeUp key={index} delay={index * 0.1}>
+                      <div
+                        onClick={() => handleBarberSelect(barber)}
+                        className="relative group size-[100px] md:size-[135px] cursor-pointer rounded-full mr-[10px] mb-[20px] overflow-hidden text-[18px] text-white font-[400] "
+                      >
+                        <Image
+                          src={barber.img}
+                          alt={barber.name}
+                          width={200}
+                          height={200}
+                          className="w-full h-full object-cover absolute inset-0  group-hover:translate-x-[-100%] transition-all ease-in-out duration-300"
+                        />
+                        <Image
+                          src={barber.img}
+                          alt={barber.name}
+                          width={200}
+                          height={200}
+                          className="w-full h-full object-cover absolute inset-0  group-hover:translate-x-[0] translate-x-[100%] transition-all ease-in-out duration-300"
+                        />
+                        <div className="absolute inset-0 group-hover:opacity-100 opacity-0 transition-all ease-in-out duration-500 w-full h-full bg-[#232323] border-[5px] border-[#3c3c3cfc] flex items-center justify-center rounded-full">
+                          {barber.name}
+                        </div>
                       </div>
-                    </div>
+                    </FadeUp>
                   ))}
                 </div>{" "}
               </>
@@ -171,13 +184,15 @@ const Booking = () => {
                 </h4>
                 <div className="mb-[40px]">
                   {services.map((service, index) => (
-                    <div
-                      key={index}
-                      onClick={() => handleServiceSelect(service)}
-                      className="bg-[#eaeaea] p-[10px] rounded-[5px] mb-[5px] cursor-pointer hover:bg-black hover:text-white hover:scale-[1.008] transition-all duration-500 ease-in-out"
-                    >
-                      {service}
-                    </div>
+                    <FadeUp key={index} delay={index * 0.1}>
+                      <div
+                        key={index}
+                        onClick={() => handleServiceSelect(service)}
+                        className="bg-[#eaeaea] p-[10px] rounded-[5px] mb-[5px] text-[13px] md:text-[16px] cursor-pointer hover:bg-black hover:text-white hover:scale-[1.008] transition-all duration-500 ease-in-out"
+                      >
+                        {service}
+                      </div>
+                    </FadeUp>
                   ))}
                 </div>
               </>
@@ -188,84 +203,92 @@ const Booking = () => {
         {activeStep == 2 && (
           <div className="">
             <div className="flex flex-col items-center justify-center text-center text-[#000000] font-[300] mb-[10px] text-[14px]">
-              <p>
+              <p className="">
                 Barber: <b className="font-[700]">Faisal Barber</b> | Service:{" "}
                 <b className="font-[700]">
                   GENTLEMANS ROYAL SHAVE (with special facial treatment)
                 </b>{" "}
                 | Price: <b className="font-[700]">€45,00</b>
               </p>
-              <p>Choose your appointment</p>
+              <p className="my-[15px]">Choose your appointment</p>
             </div>
-            <TimeAndDate
-              time={selectedTime}
-              setTime={handelTimeSelect}
-              date={selectedDate}
-              setDate={setSelectedDate}
-            />
+            <FadeUp delay={0.5}>
+              <TimeAndDate
+                time={selectedTime}
+                setTime={handelTimeSelect}
+                date={selectedDate}
+                setDate={setSelectedDate}
+              />
+            </FadeUp>
           </div>
         )}
         {activeStep == 3 && (
-          <div className="w-full">
-            <div className="mb-[20px] w-full flex">
-              <div className="w-[20%] mr-[15px]  border-[2px] border-black rounded-[4%] h-auto p-[2px]">
-                <Image
-                  src={
-                    "https://alibarbershop.at/wp-content/uploads/Georgi-Barber-2.jpg"
-                  }
-                  alt=""
-                  width={1000}
-                  height={1000}
-                  className="w-full h-full object-cover rounded-[3%]"
-                />
+          <Fade delay={0.3}>
+            <div className="w-full">
+              <div className="mb-[20px] w-full flex md:flex-row flex-col">
+                <div className="md:w-[20%] mr-[15px]  border-[2px] border-black rounded-[4%] h-auto p-[2px]">
+                  <Image
+                    src={
+                      "https://alibarbershop.at/wp-content/uploads/Georgi-Barber-2.jpg"
+                    }
+                    alt=""
+                    width={1000}
+                    height={1000}
+                    className="w-full h-full object-cover rounded-[3%]"
+                  />
+                </div>
+                <div className="md:w-[65%]  text-[14px] mt-[5px] leading-[1.4] font-[200] ">
+                  You have an appointment:
+                  <br /> Service:{" "}
+                  <b className="font-[700]">
+                    ALI BARBER BEARD TRIM ( english beard trim & beard care &
+                    brush blow dry)
+                  </b>
+                  <br />
+                  Barber: <b className="font-[700]">Georgi Barber</b>
+                  <br />
+                  Date: <b className="font-[700]">17/03/2025</b>
+                  <br />
+                  Time <b className="font-[700]">14:30</b>
+                  <br />
+                  Price: <b className="font-[700]">€35,00</b>.
+                  <br /> <br />
+                  Please fill in your data to continue booking.
+                </div>
               </div>
-              <div className="w-[65%]  text-[14px] mt-[5px] leading-[1.4] font-[300] ">
-                You have an appointment:
-                <br /> Service:{" "}
-                <b className="font-[700]">
-                  ALI BARBER BEARD TRIM ( english beard trim & beard care &
-                  brush blow dry)
-                </b>
-                <br />
-                Barber: <b className="font-[700]">Georgi Barber</b>
-                <br />
-                Date: <b className="font-[700]">17/03/2025</b>
-                <br />
-                Time <b className="font-[700]">14:30</b>
-                <br />
-                Price: <b className="font-[700]">€35,00</b>.
-                <br /> <br />
-                Please fill in your data to continue booking.
+              <div className="mb-[20px] ">
+                <p className="mb-[20px] font-[300]">
+                  Already registered? Log In here
+                </p>
+                <button className="bg-[#3f3f3f] uppercase text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
+                  Login
+                </button>
               </div>
+              <DetailsForm />
             </div>
-            <div className="mb-[20px] ">
-              <p className="mb-[20px] font-[300]">
-                Already registered? Log In here
-              </p>
-              <button className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
-                Login
-              </button>
-            </div>
-            <DetailsForm />
-          </div>
+          </Fade>
         )}
 
         {activeStep == 4 && <div className=""></div>}
 
         <div className="pt-[30px] mt-[20px] border-t border-[#c0c0c0]">
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center my-[10px] justify-between flex-wrap gap-2">
             {activeStep > 1 && (
-              <button
-                onClick={() => handleBackStep()}
-                className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]"
-              >
-                Back
-              </button>
+              <FadeLeft delay={0.2}>
+                <button
+                  onClick={() => handleBackStep()}
+                  className="bg-[#3f3f3f] text-white uppercase text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]"
+                >
+                  Back
+                </button>
+              </FadeLeft>
             )}
             {activeStep == 3 && (
-              <button className="bg-[#3f3f3f] text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
-                Next
-              </button>
+              <FadeRight delay={0.3}>
+                <button className="bg-[#3f3f3f] uppercase text-white text-[18px] leading-[1] font-[700] cursor-pointer px-[30px] py-[10px] rounded-[4px]">
+                  Next
+                </button>
+              </FadeRight>
             )}
           </div>
 
@@ -282,7 +305,7 @@ const Booking = () => {
         </div>
 
         <button
-          onClick={() => toggleBooking()}
+          onClick={() => handleCloseBooking()}
           className="size-[30px] absolute z-[99] flex items-center justify-center cursor-pointer top-[-8px] right-[-8px] rounded-full bg-black text-white font-inherit font-thin text-[22px] leading-[26px] border-2 border-white shadow-[0px_0px_15px_1px_rgba(2,2,2,0.75)]"
         >
           <IoClose />

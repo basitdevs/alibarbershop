@@ -4,6 +4,7 @@ import { FaPause, FaPlay } from "react-icons/fa";
 import Heading from "../Common/Heading";
 import Paragraph from "../Common/Paragraph";
 import Video from "../Common/Video";
+import FadeRight from "../motion/FadeRight";
 
 const ImageAndVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -20,9 +21,9 @@ const ImageAndVideo = () => {
     }
   };
   return (
-    <div className="py-[20px] sm:py-[50px] md:py-[80px] ">
+    <div className="py-[14px] sm:py-[40px] md:py-[60px] ">
       <div className="max-w-[1200px] mx-auto px-[20px] md:px-[50px]">
-        <div className="grid grid-cols-1  lg:grid-cols-3 gap-[20px]">
+        <div className="grid grid-cols-1  lg:grid-cols-3 gap-[12px] md:gap-[20px]">
           <div className="">
             <Heading
               text={"Ali Barbershop beim Kick-off der NFL-Saison auf Puls4!"}
@@ -45,9 +46,11 @@ const ImageAndVideo = () => {
           </div>
           <div className="lg:col-span-2">
             <div className="w-full relative">
-              <Video src="https://alibarbershop.at/files/ALibarbershop_nmedia2.mp4" />
+              <FadeRight delay={0.5}>
+                <Video src="https://alibarbershop.at/files/ALibarbershop_nmedia2.mp4" />
+              </FadeRight>
             </div>
-            <div className="mt-[30px]">
+            <div className="mt-[20px] md:mt-[30px]">
               <Paragraph
                 text={`  “Es ist immer ein Erlebnis, bei Ali Barbershop vorbeizuschauen.
                 Nicht nur mein Haarschnitt ist erstklassig, sondern auch die

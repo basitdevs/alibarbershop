@@ -109,8 +109,8 @@ const TimeAndDate = ({
   const disablePastDates = (date: Dayjs) => date.isBefore(dayjs(), "day");
 
   return (
-    <div className="flex gap-6 h-full">
-      <div className="p-4 bg-[#3f3f3f] text-white inline-block">
+    <div className="flex md:flex-row flex-col gap-6 h-full">
+      <div className="md:p-4 bg-[#3f3f3f] text-white inline-block">
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DateCalendar
             value={selectedDate}

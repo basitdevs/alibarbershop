@@ -13,7 +13,7 @@ const galleryData =  [
     video: "https://alibarbershop.at/files/Barberclub-Ali-Barber-for-Loreal-at-Game-City-Vienna-Rathaus-2023.mp4",
   },
   {
-    title: `ALI BARBER SHOP MEETS VIENNA HIGH SOCIETY AT OH <br />
+    title: `ALI BARBER SHOP MEETS VIENNA HIGH SOCIETY AT OH <br class="md:block hidden" />
             <b>, WHAT A NIGHT! CHARITY CLUBBING</b>`,
     desc: `Ali Barber Shop was at the Oh, what a night! charity clubbing event at Kursalon Hübner 1010 Vienna on August 24, 2023.
     
@@ -27,7 +27,7 @@ const galleryData =  [
     video: "https://alibarbershop.at/files/VIENNA_ALI_BARBER_Show-_High_Society_@_Oh_what_a_night_Kursalon_2023.mp4",
   },
   {
-    title: `ALI BARBER SHOP IN <br />
+    title: `ALI BARBER SHOP IN <br class="md:block hidden" />
             <b>BREITLING BOUTIQUE VIENNA</b>`,
     desc: `“Breitling meets Ali Barber” was a Father’s Day event that took place on June 10th this year.
     
