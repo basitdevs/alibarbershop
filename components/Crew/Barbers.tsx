@@ -26,6 +26,7 @@ const ImageComponet = ({
         type: "spring",
       },
     }}
+    viewport={{ once: true }}
     className="relative overflow-hidden group"
   >
     <Image

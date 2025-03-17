@@ -86,6 +86,7 @@ const Hero = () => {
               className="w-full h-full object-cover"
               src={slide.src}
               autoPlay
+              preload="auto"
               loop
               muted
             />
