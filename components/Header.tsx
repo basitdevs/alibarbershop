@@ -212,8 +212,8 @@ const Header = () => {
                           
                           ${
                             pathname === link.link
-                                ? "border-white "
-                                : "border-transparent "
+                              ? "border-white "
+                              : "border-transparent "
                           } pb-[3px] `}
                       >
                         {link.title}

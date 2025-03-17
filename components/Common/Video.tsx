@@ -1,39 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 
-const Video = ({ src }: { src: string }) => {
-  const videoSrc = src;
-  const [thumbnail, setThumbnail] = useState<string | null>(null);
+const Video = ({ src, thumbnail }: { src: string; thumbnail?: string }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const generateThumbnail = () => {
-      const video = document.createElement("video");
-      video.src = videoSrc;
-      video.crossOrigin = "anonymous"; // Prevent CORS issues
-      video.preload = "metadata";
-
-      video.onloadeddata = () => {
-        video.currentTime = 1; // Capture frame at 1 second
-      };
-
-      video.onseeked = () => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        if (ctx) {
-          canvas.width = video.videoWidth;
-          canvas.height = video.videoHeight;
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-          setThumbnail(canvas.toDataURL("image/jpeg")); // Convert to Base64
-        }
-      };
-    };
-
-    generateThumbnail();
-  }, [videoSrc]);
 
   const togglePlayPause = () => {
     if (videoRef.current) {
