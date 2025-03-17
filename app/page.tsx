@@ -9,7 +9,7 @@ import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Hero />
       <News />
       <About />

@@ -5,7 +5,7 @@ import React from "react";
 
 const Crew = () => {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Hero
         title="Crew"
         img="https://alibarbershop.at/files/2017/12/DSC_0120.jpg"

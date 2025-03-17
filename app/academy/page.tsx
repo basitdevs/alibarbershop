@@ -4,13 +4,13 @@ import React from "react";
 
 const Academy = () => {
   return (
-    <div>
+    <main className="overflow-x-hidden">
       <Hero
         img="https://alibarbershop.at/files/2016/01/DSC_0794.jpg"
         title="Barbers Academy Vienna"
       />
       <Main />
-    </div>
+    </main>
   );
 };
 

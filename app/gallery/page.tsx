@@ -127,7 +127,7 @@ const galleryData =  [
 
 const Gallery = () => {
   return (
-    <div>
+    <main className="overflow-x-hidden">
       <Hero
         img="https://alibarbershop.at/files/2016/01/DSC_0043.jpg"
         title="Gallery"
@@ -141,7 +141,7 @@ const Gallery = () => {
           bookNow={item?.bookNow}
         />
       ))}
-    </div>
+    </main>
   );
 };
 

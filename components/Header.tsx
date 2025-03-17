@@ -92,7 +92,7 @@ const Header = () => {
     <header
       className={`w-full pb-[3px]  fixed ${
         scrolled ? "text-black bg-white " : "text-white bg-transparent  "
-      } top-0 left-0 right-0 min-h-[50px] border-b-[1px] border-white/15 z-[99]`}
+      } top-0 left-0 right-0 min-h-[50px] border-b-[1px] border-white/15 z-[999]`}
     >
       <div className="h-[75px] w-full mx-auto max-w-[1200px] flex items-center justify-between gap-3 px-[15px]">
         <div className="flex items-center ">
@@ -212,10 +212,8 @@ const Header = () => {
                           
                           ${
                             pathname === link.link
-                              ? scrolled
                                 ? "border-black "
                                 : "border-white "
-                              : "border-transparent "
                           } pb-[3px] `}
                       >
                         {link.title}

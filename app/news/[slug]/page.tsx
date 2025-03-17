@@ -12,11 +12,11 @@ const NewsPage = async ({
   console.log(slug);
 
   return (
-    <div>
+    <main className="overflow-x-hidden">
       <Hero title="Ali Barber for L’oreal at Game City Vienna" />
       <BreadCumb text="Ali Barber for L’oreal at Game City Vienna"/> 
       <Main />
-    </div>
+    </main>
   );
 };
 

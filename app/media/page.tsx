@@ -6,7 +6,7 @@ import React from "react";
 
 const Media = () => {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Hero img="https://alibarbershop.at/files/4V7A__3155.jpg" title="Media" />
       <ImageAndText
         img="https://alibarbershop.at/files/Ali-Barberhomolka_web4.jpg"
