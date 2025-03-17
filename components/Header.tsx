@@ -105,7 +105,7 @@ const Header = () => {
                 height={300}
                 objectFit="cover"
                 className={`w-full ${
-                  scrolled && "brightness-[0]"
+                  scrolled && !isOpen && "brightness-[0]"
                 } h-full max-h-[44px] object-cover`}
               />
             </Link>
@@ -212,8 +212,8 @@ const Header = () => {
                           
                           ${
                             pathname === link.link
-                                ? "border-black "
-                                : "border-white "
+                                ? "border-white "
+                                : "border-transparent "
                           } pb-[3px] `}
                       >
                         {link.title}

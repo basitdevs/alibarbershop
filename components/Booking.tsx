@@ -107,7 +107,7 @@ const Booking = () => {
   if (!showBooking) return;
 
   return (
-    <div className="fixed  overflow-y-auto inset-0 z-[999] w-full h-full p-[10px] pb-[50px] md:pb-[40px] md:py-[40px] md:px-[20px] flex justify-center bg-black/60 overflow-hidden">
+    <div className="fixed  overflow-y-auto inset-0 z-[9999] w-full h-full p-[10px] pb-[50px] md:pb-[40px] md:py-[40px] md:px-[20px] flex justify-center bg-black/60 overflow-hidden">
       <div className="p-[18px] relative  h-fit rounded-[3px] border-2 border-black shadow-[0px_0px_30px_0px_rgba(2,2,2,1)] bg-white w-full md:w-[60%] ">
         <div className="flex items-center justify-center mb-[20px]">
           <Image
